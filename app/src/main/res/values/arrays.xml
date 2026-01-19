@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Для DoseCalculatorActivity -->
+    <string-array name="concentration_units">
+        <item>мг/мл</item>
+        <item>г/мл</item>
+        <item>МЕ/мл</item>
+        <item>мкг/мл</item>
+    </string-array>
+
+    <string-array name="dose_units">
+        <item>мг/кг</item>
+        <item>г/кг</item>
+        <item>МЕ/кг</item>
+        <item>мкг/кг</item>
+        <item>мл/кг</item>
+    </string-array>
+
+    <string-array name="frequency_options">
+        <item>1 раз в сутки</item>
+        <item>2 раза в сутки</item>
+        <item>3 раза в сутки</item>
+        <item>4 раза в сутки</item>
+        <item>6 раз в сутки</item>
+        <item>8 раз в сутки</item>
+        <item>12 раз в сутки</item>
+        <item>По требованию</item>
+    </string-array>
+
+    <string-array name="route_options">
+        <item>Внутривенно</item>
+        <item>Внутримышечно</item>
+        <item>Подкожно</item>
+        <item>Перорально</item>
+        <item>Ректально</item>
+        <item>Ингаляционно</item>
+        <item>Наружно</item>
+    </string-array>
+</resources>
