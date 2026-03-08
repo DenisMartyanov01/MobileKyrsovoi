@@ -1,16 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FAFAFA">
+    android:background="#0F172A"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp"
+        android:paddingTop="32dp"
+        android:paddingBottom="32dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
         android:gravity="center">
+
+        <!-- Логотип или иконка приложения -->
+        <LinearLayout
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/logo_circle_bg"
+            android:gravity="center"
+            android:layout_marginBottom="24dp">
+
+            <ImageView
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:src="@drawable/ic_brain"
+                android:tint="#818CF8" />
+        </LinearLayout>
+
+        <!-- Заголовок -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ДОБРО ПОЖАЛОВАТЬ"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#818CF8"
+            android:letterSpacing="0.1"
+            android:layout_marginBottom="8dp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -18,15 +49,18 @@
             android:text="Вход в систему"
             android:textSize="28sp"
             android:textStyle="bold"
-            android:textColor="#1A237E"
-            android:layout_marginBottom="48dp"/>
+            android:textColor="#FFFFFF"
+            android:fontFamily="sans-serif-black"
+            android:layout_marginBottom="40dp"/>
 
+        <!-- Поле ввода логина -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Имя пользователя"
-            android:textSize="14sp"
-            android:textColor="#424242"
+            android:text="ЛОГИН"
+            android:textSize="12sp"
+            android:textColor="#94A3B8"
+            android:letterSpacing="0.05"
             android:layout_marginBottom="8dp"
             android:layout_gravity="start"/>
 
@@ -35,18 +69,23 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:hint="Введите логин"
+            android:textColorHint="#64748B"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
             android:inputType="text"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
-            android:background="@drawable/edittext_background"
-            android:layout_marginBottom="16dp"/>
+            android:background="@drawable/edittext_modern_bg"
+            android:layout_marginBottom="20dp"/>
 
+        <!-- Поле ввода пароля -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Пароль"
-            android:textSize="14sp"
-            android:textColor="#424242"
+            android:text="ПАРОЛЬ"
+            android:textSize="12sp"
+            android:textColor="#94A3B8"
+            android:letterSpacing="0.05"
             android:layout_marginBottom="8dp"
             android:layout_gravity="start"/>
 
@@ -55,36 +94,97 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:hint="Введите пароль"
+            android:textColorHint="#64748B"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
             android:inputType="textPassword"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
-            android:background="@drawable/edittext_background"
-            android:layout_marginBottom="32dp"/>
+            android:background="@drawable/edittext_modern_bg"
+            android:layout_marginBottom="12dp"/>
 
+        <!-- Ссылка "Забыли пароль?" -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Забыли пароль?"
+            android:textSize="13sp"
+            android:textColor="#818CF8"
+            android:layout_gravity="end"
+            android:layout_marginBottom="32dp"
+            android:padding="4dp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <!-- Кнопка входа -->
         <Button
             android:id="@+id/loginButton"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
+            android:layout_height="54dp"
             android:text="ВОЙТИ"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:gravity="center"
             android:textColor="#FFFFFF"
-            android:backgroundTint="#2196F3"
-            style="@style/Widget.MaterialComponents.Button"
-            android:layout_marginBottom="24dp"/>
+            android:background="@drawable/login_button_bg"
+            android:gravity="center"
+            android:layout_marginBottom="24dp"
+            android:stateListAnimator="@null"/>
 
-        <TextView
-            android:id="@+id/registerLink"
+        <!-- Разделитель -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="24dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="#334155" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ИЛИ"
+                android:textSize="12sp"
+                android:textColor="#64748B"
+                android:paddingHorizontal="16dp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="#334155" />
+        </LinearLayout>
+
+        <!-- Ссылка на регистрацию -->
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Создать новый аккаунт"
-            android:textSize="14sp"
-            android:textColor="#2196F3"
-            android:textStyle="bold"
-            android:padding="8dp"
-            android:layout_marginBottom="32dp"
-            android:clickable="true"
-            android:focusable="true"/>
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Нет аккаунта? "
+                android:textSize="14sp"
+                android:textColor="#94A3B8" />
+
+            <TextView
+                android:id="@+id/registerLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Создать"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#818CF8"
+                android:padding="4dp"
+                android:clickable="true"
+                android:focusable="true"/>
+        </LinearLayout>
+
     </LinearLayout>
 </ScrollView>

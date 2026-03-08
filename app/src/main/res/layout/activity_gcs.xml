@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FAFAFA"
+    android:background="#0F172A"
     android:fillViewport="true"
     tools:context=".GCSActivity">
 
@@ -12,85 +12,89 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingVertical="32dp"
-        android:paddingHorizontal="24dp">
+        android:paddingTop="16dp"
+        android:paddingBottom="24dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp">
 
+        <!-- Хедер с градиентом -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="24dp"
-            android:gravity="center_vertical">
+            android:layout_height="72dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/round_header_bg"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="16dp"
+            android:orientation="horizontal">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="56dp"
-                android:layout_height="56dp"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="2dp"
-                app:cardUseCompatPadding="true">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:gravity="center"
-                    android:background="?attr/selectableItemBackground"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:id="@+id/button_to_main">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_margin="4dp"
-                        android:src="@drawable/ic_arrow"
-                        app:tint="#2196F3" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+            <ImageView
+                android:id="@+id/button_to_main"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_arrow"
+                android:padding="10dp"
+                android:background="@drawable/round_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:tint="#FFFFFF" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Шкала Глазго (GCS)"
-                android:textSize="24sp"
+                android:text="GCS"
+                android:textSize="28sp"
                 android:textStyle="bold"
-                android:textColor="#1A237E"
+                android:textColor="#FFFFFF"
                 android:gravity="center"
-                android:letterSpacing="0.02"
-                android:paddingStart="8dp"
-                android:paddingEnd="32dp"/>
+                android:fontFamily="sans-serif-black" />
 
-
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3-15"
+                android:textSize="14sp"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/pill_bg"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="6dp" />
         </LinearLayout>
 
+        <!-- Инфо карточка -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="2dp"
-            app:cardUseCompatPadding="true"
-            android:layout_marginBottom="24dp">
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="#1E293B"
+            android:layout_marginBottom="20dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:gravity="center_vertical">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:layout_marginBottom="8dp">
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/circle_bg"
+                    android:gravity="center"
+                    android:layout_marginEnd="12dp">
 
                     <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
                         android:src="@drawable/ic_brain"
-                        android:layout_marginEnd="12dp"
-                        app:tint="@color/brain" />
+                        android:tint="#818CF8" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -98,381 +102,474 @@
                         android:text="Шкала комы Глазго"
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        android:textColor="#1A237E" />
-                </LinearLayout>
+                        android:textColor="#FFFFFF"
+                        android:layout_marginBottom="2dp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Оцените уровень сознания пациента по трем критериям: открывание глаз, речевая и двигательная реакция."
-                    android:textSize="14sp"
-                    android:textColor="#616161"
-                    android:lineSpacingExtra="4dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Оценка уровня сознания"
+                        android:textSize="13sp"
+                        android:textColor="#94A3B8" />
+                </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
+        <!-- Блок 1: Открывание глаз -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="1dp"
-            app:cardUseCompatPadding="true"
-            android:layout_marginBottom="16dp">
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="#1E293B"
+            android:layout_marginBottom="12dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="0dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <!-- Заголовок -->
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="1. Открывание глаз"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="#2196F3"
-                    android:layout_marginBottom="12dp" />
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:paddingBottom="8dp"
+                    android:gravity="center_vertical">
+
+                    <View
+                        android:layout_width="4dp"
+                        android:layout_height="24dp"
+                        android:background="#818CF8"
+                        android:layout_marginEnd="12dp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="ГЛАЗА"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#818CF8"
+                        android:letterSpacing="0.05" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1-4"
+                        android:textSize="12sp"
+                        android:textColor="#94A3B8"
+                        android:background="@drawable/pill_gray"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="3dp" />
+                </LinearLayout>
 
                 <RadioGroup
                     android:id="@+id/eyesRadioGroup"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:paddingHorizontal="16dp"
+                    android:paddingBottom="8dp">
 
                     <RadioButton
                         android:id="@+id/eyesSpontaneous"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Спонтанное (4 балла)"
-                        android:textSize="16sp"
-                        android:paddingVertical="12dp"
-                        android:buttonTint="#2196F3"
-                        android:layout_marginBottom="4dp" />
+                        android:text="Спонтанное"
+                        android:textSize="15sp"
+                        android:textColor="#FFFFFF"
+                        android:paddingVertical="10dp"
+                        android:buttonTint="#818CF8" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:background="#F5F5F5"
+                        android:background="#334155"
                         android:layout_marginVertical="4dp" />
 
                     <RadioButton
                         android:id="@+id/eyesToSpeech"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="На речевую команду (3 балла)"
-                        android:textSize="16sp"
-                        android:paddingVertical="12dp"
-                        android:buttonTint="#2196F3"
-                        android:layout_marginBottom="4dp" />
+                        android:text="На речевую команду"
+                        android:textSize="15sp"
+                        android:textColor="#FFFFFF"
+                        android:paddingVertical="10dp"
+                        android:buttonTint="#818CF8" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:background="#F5F5F5"
+                        android:background="#334155"
                         android:layout_marginVertical="4dp" />
 
                     <RadioButton
                         android:id="@+id/eyesToPain"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="На болевое раздражение (2 балла)"
-                        android:textSize="16sp"
-                        android:paddingVertical="12dp"
-                        android:buttonTint="#2196F3"
-                        android:layout_marginBottom="4dp" />
+                        android:text="На боль"
+                        android:textSize="15sp"
+                        android:textColor="#FFFFFF"
+                        android:paddingVertical="10dp"
+                        android:buttonTint="#818CF8" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:background="#F5F5F5"
+                        android:background="#334155"
                         android:layout_marginVertical="4dp" />
 
                     <RadioButton
                         android:id="@+id/eyesNone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Отсутствует (1 балл)"
-                        android:textSize="16sp"
-                        android:paddingVertical="12dp"
-                        android:buttonTint="#2196F3" />
+                        android:text="Нет реакции"
+                        android:textSize="15sp"
+                        android:textColor="#FFFFFF"
+                        android:paddingVertical="10dp"
+                        android:buttonTint="#818CF8" />
                 </RadioGroup>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
+        <!-- Блок 2: Речевая реакция -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="1dp"
-            app:cardUseCompatPadding="true"
-            android:layout_marginBottom="16dp">
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="#1E293B"
+            android:layout_marginBottom="12dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="0dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="2. Речевая реакция"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="#4CAF50"
-                    android:layout_marginBottom="12dp" />
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:paddingBottom="8dp"
+                    android:gravity="center_vertical">
+
+                    <View
+                        android:layout_width="4dp"
+                        android:layout_height="24dp"
+                        android:background="#F87171"
+                        android:layout_marginEnd="12dp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="РЕЧЬ"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#F87171"
+                        android:letterSpacing="0.05" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1-5"
+                        android:textSize="12sp"
+                        android:textColor="#94A3B8"
+                        android:background="@drawable/pill_gray"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="3dp" />
+                </LinearLayout>
 
                 <RadioGroup
                     android:id="@+id/verbalRadioGroup"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:paddingHorizontal="16dp"
+                    android:paddingBottom="8dp">
 
                     <RadioButton
                         android:id="@+id/verbalOriented"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Ориентирован (5 баллов)"
-                        android:textSize="16sp"
-                        android:paddingVertical="12dp"
-                        android:buttonTint="#4CAF50"
-                        android:layout_marginBottom="4dp" />
+                        android:text="Ориентирован"
+                        android:textSize="15sp"
+                        android:textColor="#FFFFFF"
+                        android:paddingVertical="10dp"
+                        android:buttonTint="#F87171" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:background="#F5F5F5"
+                        android:background="#334155"
                         android:layout_marginVertical="4dp" />
 
                     <RadioButton
                         android:id="@+id/verbalConfused"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Спутанная речь (4 балла)"
-                        android:textSize="16sp"
-                        android:paddingVertical="12dp"
-                        android:buttonTint="#4CAF50"
-                        android:layout_marginBottom="4dp" />
+                        android:text="Спутанная"
+                        android:textSize="15sp"
+                        android:textColor="#FFFFFF"
+                        android:paddingVertical="10dp"
+                        android:buttonTint="#F87171" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:background="#F5F5F5"
+                        android:background="#334155"
                         android:layout_marginVertical="4dp" />
 
                     <RadioButton
                         android:id="@+id/verbalInappropriate"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Неуместные слова (3 балла)"
-                        android:textSize="16sp"
-                        android:paddingVertical="12dp"
-                        android:buttonTint="#4CAF50"
-                        android:layout_marginBottom="4dp" />
+                        android:text="Неуместные слова"
+                        android:textSize="15sp"
+                        android:textColor="#FFFFFF"
+                        android:paddingVertical="10dp"
+                        android:buttonTint="#F87171" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:background="#F5F5F5"
+                        android:background="#334155"
                         android:layout_marginVertical="4dp" />
 
                     <RadioButton
                         android:id="@+id/verbalIncomprehensible"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Нечленораздельные звуки (2 балла)"
-                        android:textSize="16sp"
-                        android:paddingVertical="12dp"
-                        android:buttonTint="#4CAF50"
-                        android:layout_marginBottom="4dp" />
+                        android:text="Нечленораздельно"
+                        android:textSize="15sp"
+                        android:textColor="#FFFFFF"
+                        android:paddingVertical="10dp"
+                        android:buttonTint="#F87171" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:background="#F5F5F5"
+                        android:background="#334155"
                         android:layout_marginVertical="4dp" />
 
                     <RadioButton
                         android:id="@+id/verbalNone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Отсутствует (1 балл)"
-                        android:textSize="16sp"
-                        android:paddingVertical="12dp"
-                        android:buttonTint="#4CAF50" />
+                        android:text="Нет речи"
+                        android:textSize="15sp"
+                        android:textColor="#FFFFFF"
+                        android:paddingVertical="10dp"
+                        android:buttonTint="#F87171" />
                 </RadioGroup>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
+        <!-- Блок 3: Двигательная реакция -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="1dp"
-            app:cardUseCompatPadding="true"
-            android:layout_marginBottom="24dp">
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="#1E293B"
+            android:layout_marginBottom="20dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="0dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="3. Двигательная реакция"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="#FF9800"
-                    android:layout_marginBottom="12dp" />
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:paddingBottom="8dp"
+                    android:gravity="center_vertical">
+
+                    <View
+                        android:layout_width="4dp"
+                        android:layout_height="24dp"
+                        android:background="#4ADE80"
+                        android:layout_marginEnd="12dp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="ДВИЖЕНИЯ"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#4ADE80"
+                        android:letterSpacing="0.05" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1-6"
+                        android:textSize="12sp"
+                        android:textColor="#94A3B8"
+                        android:background="@drawable/pill_gray"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="3dp" />
+                </LinearLayout>
 
                 <RadioGroup
                     android:id="@+id/motorRadioGroup"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:paddingHorizontal="16dp"
+                    android:paddingBottom="8dp">
 
                     <RadioButton
                         android:id="@+id/motorObeys"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Выполняет команды (6 баллов)"
-                        android:textSize="16sp"
-                        android:paddingVertical="12dp"
-                        android:buttonTint="#FF9800"
-                        android:layout_marginBottom="4dp" />
+                        android:text="Выполняет команды"
+                        android:textSize="15sp"
+                        android:textColor="#FFFFFF"
+                        android:paddingVertical="10dp"
+                        android:buttonTint="#4ADE80" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:background="#F5F5F5"
+                        android:background="#334155"
                         android:layout_marginVertical="4dp" />
 
                     <RadioButton
                         android:id="@+id/motorLocalizes"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Локализует боль (5 баллов)"
-                        android:textSize="16sp"
-                        android:paddingVertical="12dp"
-                        android:buttonTint="#FF9800"
-                        android:layout_marginBottom="4dp" />
+                        android:text="Локализует боль"
+                        android:textSize="15sp"
+                        android:textColor="#FFFFFF"
+                        android:paddingVertical="10dp"
+                        android:buttonTint="#4ADE80" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:background="#F5F5F5"
+                        android:background="#334155"
                         android:layout_marginVertical="4dp" />
 
                     <RadioButton
                         android:id="@+id/motorWithdraws"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Отдергивание (4 балла)"
-                        android:textSize="16sp"
-                        android:paddingVertical="12dp"
-                        android:buttonTint="#FF9800"
-                        android:layout_marginBottom="4dp" />
+                        android:text="Отдергивание"
+                        android:textSize="15sp"
+                        android:textColor="#FFFFFF"
+                        android:paddingVertical="10dp"
+                        android:buttonTint="#4ADE80" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:background="#F5F5F5"
+                        android:background="#334155"
                         android:layout_marginVertical="4dp" />
 
                     <RadioButton
                         android:id="@+id/motorFlexion"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Сгибание (3 балла)"
-                        android:textSize="16sp"
-                        android:paddingVertical="12dp"
-                        android:buttonTint="#FF9800"
-                        android:layout_marginBottom="4dp" />
+                        android:text="Сгибание"
+                        android:textSize="15sp"
+                        android:textColor="#FFFFFF"
+                        android:paddingVertical="10dp"
+                        android:buttonTint="#4ADE80" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:background="#F5F5F5"
+                        android:background="#334155"
                         android:layout_marginVertical="4dp" />
 
                     <RadioButton
                         android:id="@+id/motorExtension"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Разгибание (2 балла)"
-                        android:textSize="16sp"
-                        android:paddingVertical="12dp"
-                        android:buttonTint="#FF9800"
-                        android:layout_marginBottom="4dp" />
+                        android:text="Разгибание"
+                        android:textSize="15sp"
+                        android:textColor="#FFFFFF"
+                        android:paddingVertical="10dp"
+                        android:buttonTint="#4ADE80" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:background="#F5F5F5"
+                        android:background="#334155"
                         android:layout_marginVertical="4dp" />
 
                     <RadioButton
                         android:id="@+id/motorNone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Отсутствует (1 балл)"
-                        android:textSize="16sp"
-                        android:paddingVertical="12dp"
-                        android:buttonTint="#FF9800" />
+                        android:text="Нет реакции"
+                        android:textSize="15sp"
+                        android:textColor="#FFFFFF"
+                        android:paddingVertical="10dp"
+                        android:buttonTint="#4ADE80" />
                 </RadioGroup>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
+        <!-- Кнопка расчета -->
         <Button
             android:id="@+id/calculateButton"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:text="Рассчитать GCS"
+            android:layout_height="54dp"
+            android:text="РАССЧИТАТЬ"
             android:textSize="16sp"
             android:textStyle="bold"
             android:textColor="#FFFFFF"
-            android:backgroundTint="#FF9800"
+            android:background="@drawable/round_button_bg"
             android:gravity="center"
-            app:cornerRadius="12dp"
-            style="@style/Widget.MaterialComponents.Button"
             android:layout_marginBottom="16dp" />
 
+        <!-- Результат -->
         <androidx.cardview.widget.CardView
             android:id="@+id/resultContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="2dp"
-            app:cardUseCompatPadding="true"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
             android:visibility="gone"
-            android:layout_marginBottom="24dp">
+            android:layout_marginBottom="20dp"
+            app:cardBackgroundColor="#312E81">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="24dp">
+                android:padding="20dp"
+                android:gravity="center">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Результат оценки GCS"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="#212121"
-                    android:layout_marginBottom="16dp" />
+                    android:text="РЕЗУЛЬТАТ"
+                    android:textSize="12sp"
+                    android:textColor="#A5B4FC"
+                    android:letterSpacing="0.1"
+                    android:layout_marginBottom="12dp" />
 
                 <TextView
                     android:id="@+id/totalScoreTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
-                    android:textSize="36sp"
+                    android:textSize="56sp"
                     android:textStyle="bold"
-                    android:layout_gravity="center"
+                    android:textColor="#FFFFFF"
+                    android:fontFamily="sans-serif-black"
                     android:layout_marginBottom="8dp" />
 
                 <TextView
@@ -481,28 +578,30 @@
                     android:layout_height="wrap_content"
                     android:text=""
                     android:textSize="14sp"
-                    android:textColor="#616161"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="16dp" />
+                    android:textColor="#C7D2FE"
+                    android:layout_marginBottom="12dp" />
 
                 <TextView
                     android:id="@+id/interpretationTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
-                    android:textSize="16sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
-                    android:layout_gravity="center"
-                    android:textColor="#212121" />
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/result_pill"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="8dp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
+        <!-- Легенда -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="1dp"
-            app:cardUseCompatPadding="true">
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="#1E293B">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -513,10 +612,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="📊 Шкала оценки GCS"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="#212121"
+                    android:text="КЛАССИФИКАЦИЯ"
+                    android:textSize="12sp"
+                    android:textColor="#94A3B8"
+                    android:letterSpacing="0.05"
                     android:layout_marginBottom="12dp" />
 
                 <LinearLayout
@@ -528,119 +627,115 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:layout_marginBottom="8dp">
+                        android:layout_marginBottom="8dp"
+                        android:gravity="center_vertical">
 
                         <View
-                            android:layout_width="12dp"
-                            android:layout_height="12dp"
-                            android:background="#4CAF50"
-                            android:layout_marginEnd="12dp"
-                            android:layout_gravity="center_vertical" />
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:background="#4ADE80"
+                            android:layout_marginEnd="10dp" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="Ясное сознание"
                             android:textSize="14sp"
-                            android:textColor="#212121" />
+                            android:textColor="#FFFFFF" />
 
                         <TextView
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="15 баллов"
-                            android:textSize="14sp"
-                            android:textColor="#757575"
-                            android:gravity="end" />
+                            android:text="15"
+                            android:textSize="12sp"
+                            android:textColor="#94A3B8" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:layout_marginBottom="8dp">
+                        android:layout_marginBottom="8dp"
+                        android:gravity="center_vertical">
 
                         <View
-                            android:layout_width="12dp"
-                            android:layout_height="12dp"
-                            android:background="#FF9800"
-                            android:layout_marginEnd="12dp"
-                            android:layout_gravity="center_vertical" />
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:background="#FBBF24"
+                            android:layout_marginEnd="10dp" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="Оглушение"
                             android:textSize="14sp"
-                            android:textColor="#212121" />
+                            android:textColor="#FFFFFF" />
 
                         <TextView
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="13-14 баллов"
-                            android:textSize="14sp"
-                            android:textColor="#757575"
-                            android:gravity="end" />
+                            android:text="13-14"
+                            android:textSize="12sp"
+                            android:textColor="#94A3B8" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:layout_marginBottom="8dp">
+                        android:layout_marginBottom="8dp"
+                        android:gravity="center_vertical">
 
                         <View
-                            android:layout_width="12dp"
-                            android:layout_height="12dp"
-                            android:background="#FF5722"
-                            android:layout_marginEnd="12dp"
-                            android:layout_gravity="center_vertical" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Сопор"
-                            android:textSize="14sp"
-                            android:textColor="#212121" />
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:background="#F97316"
+                            android:layout_marginEnd="10dp" />
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="9-12 баллов"
+                            android:text="Сопор"
                             android:textSize="14sp"
-                            android:textColor="#757575"
-                            android:gravity="end" />
+                            android:textColor="#FFFFFF" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="9-12"
+                            android:textSize="12sp"
+                            android:textColor="#94A3B8" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
 
                         <View
-                            android:layout_width="12dp"
-                            android:layout_height="12dp"
-                            android:background="#F44336"
-                            android:layout_marginEnd="12dp"
-                            android:layout_gravity="center_vertical" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Кома"
-                            android:textSize="14sp"
-                            android:textColor="#212121" />
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:background="#EF4444"
+                            android:layout_marginEnd="10dp" />
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="3-8 баллов"
+                            android:text="Кома"
                             android:textSize="14sp"
-                            android:textColor="#757575"
-                            android:gravity="end" />
+                            android:textColor="#FFFFFF" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="3-8"
+                            android:textSize="12sp"
+                            android:textColor="#94A3B8" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>

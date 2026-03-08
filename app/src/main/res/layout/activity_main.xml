@@ -5,73 +5,84 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#0F172A"
     tools:context=".MainActivity">
 
-    <com.google.android.material.appbar.MaterialToolbar
+    <!-- Верхняя панель в новом стиле -->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:background="#FAFAFA"
-        android:paddingTop="12dp"
-        android:layout_height="32dp">
+        android:layout_height="72dp"
+        android:background="@drawable/round_header_bg"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/userInfoTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="18dp"
+            android:layout_weight="1"
             android:text="Гость"
-            android:textSize="14sp"
+            android:textSize="16sp"
             android:textStyle="bold"
-            android:textColor="#1A237E"
-            android:layout_gravity="end"/>
+            android:textColor="#FFFFFF"
+            android:fontFamily="sans-serif-medium" />
+
         <ImageView
             android:id="@+id/adminCrownIcon"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:src="@drawable/ic_crown"
-            android:layout_gravity="end"
-            android:layout_marginEnd="5dp"
-            app:tint="#FFD700" />
-    </com.google.android.material.appbar.MaterialToolbar>
+            android:layout_marginEnd="4dp"
+            android:tint="#FFD700" />
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="#FAFAFA"
+        android:background="#0F172A"
         android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingHorizontal="24dp"
-            android:paddingTop="10dp">
+            android:paddingHorizontal="16dp"
+            android:paddingTop="20dp">
+
+            <!-- Заголовок с улучшенным стилем -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="24dp"
                 android:gravity="center"
-                android:text="Калькулятор риска комы"
-                android:textColor="#1A237E"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+                android:text="GCS КАЛЬКУЛЯТОР"
+                android:textColor="#FFFFFF"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black"
+                android:letterSpacing="0.1" />
 
+            <!-- Сетка карточек в новом стиле -->
             <androidx.gridlayout.widget.GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:columnCount="2"
                 app:rowCount="3"
-                android:layout_marginBottom="24dp">
+                android:layout_marginBottom="16dp">
 
+                <!-- Карточка выхода (Login/Выход) -->
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
-                    android:layout_height="120dp"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="2dp"
+                    android:layout_height="140dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="#1E293B"
                     app:cardUseCompatPadding="true"
                     app:layout_columnWeight="1"
                     app:layout_rowWeight="1"
-                    android:layout_margin="8dp">
+                    android:layout_margin="6dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -82,35 +93,44 @@
                         android:clickable="true"
                         android:focusable="true"
                         android:id="@+id/loginButton"
-                        android:padding="16dp">
+                        android:padding="12dp">
 
-                        <ImageView
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:src="@drawable/ic_account"
-                            android:layout_marginBottom="8dp"
-                            app:tint="@color/blue_500" />
+                        <LinearLayout
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:background="@drawable/card_icon_bg"
+                            android:gravity="center"
+                            android:layout_marginBottom="12dp">
+
+                            <ImageView
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:src="@drawable/ic_account"
+                                android:tint="#EF4444" />
+                        </LinearLayout>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Выйти"
-                            android:textSize="14sp"
+                            android:textSize="15sp"
                             android:textStyle="bold"
-                            android:textColor="#212121"
+                            android:textColor="#FFFFFF"
                             android:gravity="center"/>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+                <!-- Карточка истории -->
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
-                    android:layout_height="120dp"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="2dp"
+                    android:layout_height="140dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="#1E293B"
                     app:cardUseCompatPadding="true"
                     app:layout_columnWeight="1"
                     app:layout_rowWeight="1"
-                    android:layout_margin="8dp">
+                    android:layout_margin="6dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -121,68 +141,150 @@
                         android:clickable="true"
                         android:focusable="true"
                         android:id="@+id/historyButton"
-                        android:padding="16dp">
+                        android:padding="12dp">
 
-                        <ImageView
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:src="@drawable/ic_history"
-                            android:layout_marginBottom="8dp"
-                            app:tint="@color/green_500" />
+                        <LinearLayout
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:background="@drawable/card_icon_bg"
+                            android:gravity="center"
+                            android:layout_marginBottom="12dp">
+
+                            <ImageView
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:src="@drawable/ic_history"
+                                android:tint="#4ADE80" />
+                        </LinearLayout>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="История"
-                            android:textSize="14sp"
+                            android:textSize="15sp"
                             android:textStyle="bold"
-                            android:textColor="#212121"
+                            android:textColor="#FFFFFF"
                             android:gravity="center"/>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+                <!-- Карточка расчета риска (на всю ширину) -->
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
-                    android:layout_height="120dp"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="2dp"
+                    android:layout_height="140dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="#1E293B"
                     app:cardUseCompatPadding="true"
                     app:layout_columnWeight="1"
                     app:layout_rowWeight="1"
-                    android:layout_margin="8dp"
+                    android:layout_margin="6dp"
                     app:layout_column="0"
-                    app:layout_row="2"
+                    app:layout_row="1"
                     app:layout_columnSpan="2">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
+                        android:orientation="horizontal"
                         android:gravity="center"
                         android:background="?attr/selectableItemBackground"
                         android:clickable="true"
                         android:focusable="true"
                         android:id="@+id/card_dose_calculator"
-                        android:padding="16dp">
+                        android:padding="20dp">
+
+                        <LinearLayout
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:background="@drawable/card_icon_bg_large"
+                            android:gravity="center"
+                            android:layout_marginEnd="20dp">
+
+                            <ImageView
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:src="@drawable/ic_brain"
+                                android:tint="#818CF8" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Рассчитать риск"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="#FFFFFF"
+                                android:fontFamily="sans-serif-medium"
+                                android:layout_marginBottom="4dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Шкала комы Глазго"
+                                android:textSize="13sp"
+                                android:textColor="#94A3B8" />
+                        </LinearLayout>
 
                         <ImageView
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:src="@drawable/ic_brain"
-                            android:layout_marginBottom="8dp"
-                            app:tint="@color/brain" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Рассчитать риск"
-                            android:textSize="14sp"
-                            android:textStyle="bold"
-                            android:textColor="#212121"
-                            android:gravity="center"/>
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_arrow"
+                            android:rotation="180"
+                            android:tint="#818CF8" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
+                <!-- Дополнительная карточка для баланса сетки (если нужно) -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="#1E293B"
+                    app:cardUseCompatPadding="true"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1"
+                    android:layout_margin="6dp"
+                    app:layout_column="0"
+                    app:layout_row="2"
+                    android:visibility="invisible">
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="#1E293B"
+                    app:cardUseCompatPadding="true"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1"
+                    android:layout_margin="6dp"
+                    app:layout_column="1"
+                    app:layout_row="2"
+                    android:visibility="invisible">
+                </androidx.cardview.widget.CardView>
+
             </androidx.gridlayout.widget.GridLayout>
+
+            <!-- Нижний колонтитул -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="Медицинский калькулятор v1.0"
+                android:textSize="12sp"
+                android:textColor="#64748B"
+                android:gravity="center" />
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
