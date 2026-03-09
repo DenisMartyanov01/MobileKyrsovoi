@@ -8,11 +8,9 @@
     android:background="#0F172A"
     tools:context=".MainActivity">
 
-    <!-- Верхняя панель в новом стиле -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="72dp"
-        android:background="@drawable/round_header_bg"
         android:gravity="center_vertical"
         android:paddingHorizontal="16dp"
         android:orientation="horizontal">
@@ -51,7 +49,6 @@
             android:paddingHorizontal="16dp"
             android:paddingTop="20dp">
 
-            <!-- Заголовок с улучшенным стилем -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -64,15 +61,13 @@
                 android:fontFamily="sans-serif-black"
                 android:letterSpacing="0.1" />
 
-            <!-- Сетка карточек в новом стиле -->
             <androidx.gridlayout.widget.GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:columnCount="2"
+                app:columnCount="3"
                 app:rowCount="3"
                 android:layout_marginBottom="16dp">
 
-                <!-- Карточка выхода (Login/Выход) -->
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
                     android:layout_height="140dp"
@@ -82,7 +77,10 @@
                     app:cardUseCompatPadding="true"
                     app:layout_columnWeight="1"
                     app:layout_rowWeight="1"
-                    android:layout_margin="6dp">
+                    android:layout_margin="6dp"
+                    app:layout_column="0"
+                    app:layout_row="0"
+                    app:layout_columnSpan="2">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -120,7 +118,6 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- Карточка истории -->
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
                     android:layout_height="140dp"
@@ -130,7 +127,10 @@
                     app:cardUseCompatPadding="true"
                     app:layout_columnWeight="1"
                     app:layout_rowWeight="1"
-                    android:layout_margin="6dp">
+                    android:layout_margin="6dp"
+                    app:layout_column="0"
+                    app:layout_row="1"
+                    app:layout_columnSpan="2">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -168,7 +168,6 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- Карточка расчета риска (на всю ширину) -->
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
                     android:layout_height="140dp"
@@ -180,7 +179,7 @@
                     app:layout_rowWeight="1"
                     android:layout_margin="6dp"
                     app:layout_column="0"
-                    app:layout_row="1"
+                    app:layout_row="2"
                     app:layout_columnSpan="2">
 
                     <LinearLayout
@@ -232,16 +231,9 @@
                                 android:textColor="#94A3B8" />
                         </LinearLayout>
 
-                        <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:src="@drawable/ic_arrow"
-                            android:rotation="180"
-                            android:tint="#818CF8" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- Дополнительная карточка для баланса сетки (если нужно) -->
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
                     android:layout_height="140dp"
@@ -273,17 +265,6 @@
                 </androidx.cardview.widget.CardView>
 
             </androidx.gridlayout.widget.GridLayout>
-
-            <!-- Нижний колонтитул -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
-                android:text="Медицинский калькулятор v1.0"
-                android:textSize="12sp"
-                android:textColor="#64748B"
-                android:gravity="center" />
 
         </LinearLayout>
     </ScrollView>

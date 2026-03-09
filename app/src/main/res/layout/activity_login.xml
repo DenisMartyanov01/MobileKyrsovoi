@@ -17,7 +17,6 @@
         android:paddingEnd="20dp"
         android:gravity="center">
 
-        <!-- Логотип или иконка приложения -->
         <LinearLayout
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -32,16 +31,7 @@
                 android:tint="#818CF8" />
         </LinearLayout>
 
-        <!-- Заголовок -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ДОБРО ПОЖАЛОВАТЬ"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:textColor="#818CF8"
-            android:letterSpacing="0.1"
-            android:layout_marginBottom="8dp"/>
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -53,7 +43,6 @@
             android:fontFamily="sans-serif-black"
             android:layout_marginBottom="40dp"/>
 
-        <!-- Поле ввода логина -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -78,7 +67,6 @@
             android:background="@drawable/edittext_modern_bg"
             android:layout_marginBottom="20dp"/>
 
-        <!-- Поле ввода пароля -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -103,20 +91,6 @@
             android:background="@drawable/edittext_modern_bg"
             android:layout_marginBottom="12dp"/>
 
-        <!-- Ссылка "Забыли пароль?" -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Забыли пароль?"
-            android:textSize="13sp"
-            android:textColor="#818CF8"
-            android:layout_gravity="end"
-            android:layout_marginBottom="32dp"
-            android:padding="4dp"
-            android:clickable="true"
-            android:focusable="true"/>
-
-        <!-- Кнопка входа -->
         <Button
             android:id="@+id/loginButton"
             android:layout_width="match_parent"
@@ -130,7 +104,6 @@
             android:layout_marginBottom="24dp"
             android:stateListAnimator="@null"/>
 
-        <!-- Разделитель -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -144,14 +117,6 @@
                 android:layout_weight="1"
                 android:background="#334155" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ИЛИ"
-                android:textSize="12sp"
-                android:textColor="#64748B"
-                android:paddingHorizontal="16dp" />
-
             <View
                 android:layout_width="0dp"
                 android:layout_height="1dp"
@@ -159,7 +124,6 @@
                 android:background="#334155" />
         </LinearLayout>
 
-        <!-- Ссылка на регистрацию -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

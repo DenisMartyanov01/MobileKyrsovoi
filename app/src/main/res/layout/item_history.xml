@@ -16,69 +16,6 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Верхняя строка с датой и баллами -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginBottom="12dp">
-
-            <!-- Иконка календаря -->
-            <LinearLayout
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:background="@drawable/card_icon_bg"
-                android:gravity="center"
-                android:layout_marginEnd="12dp">
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/ic_calendar"
-                    android:tint="#818CF8" />
-            </LinearLayout>
-
-            <!-- Дата -->
-            <TextView
-                android:id="@+id/dateTextView"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="15 января 2024"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:textColor="#FFFFFF"
-                android:fontFamily="sans-serif-medium" />
-
-            <!-- Бейдж с баллами -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="32dp"
-                android:background="@drawable/score_pill"
-                android:gravity="center"
-                android:paddingHorizontal="12dp">
-
-                <TextView
-                    android:id="@+id/scoreTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="15"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="#818CF8" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=" баллов"
-                    android:textSize="12sp"
-                    android:textColor="#94A3B8"
-                    android:layout_marginStart="2dp" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <!-- Детальная информация -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -97,77 +34,14 @@
                 android:textColor="#E2E8F0"
                 android:textSize="14sp" />
 
-            <!-- Прогресс-бар (визуализация баллов) -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="8dp"
-                android:gravity="center_vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="E"
-                    android:textSize="11sp"
-                    android:textColor="#818CF8"
-                    android:layout_marginEnd="4dp" />
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="4dp"
-                    android:layout_weight="4"
-                    android:background="@drawable/progress_segment"
-                    android:layout_marginEnd="8dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="V"
-                    android:textSize="11sp"
-                    android:textColor="#F87171"
-                    android:layout_marginEnd="4dp" />
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="4dp"
-                    android:layout_weight="5"
-                    android:background="@drawable/progress_segment"
-                    android:layout_marginEnd="8dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="M"
-                    android:textSize="11sp"
-                    android:textColor="#4ADE80"
-                    android:layout_marginEnd="4dp" />
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="4dp"
-                    android:layout_weight="6"
-                    android:background="@drawable/progress_segment" />
             </LinearLayout>
-        </LinearLayout>
 
-        <!-- Нижняя строка с кнопкой удаления -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical|end">
 
-            <!-- Время записи -->
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="14:30"
-                android:textSize="12sp"
-                android:textColor="#64748B" />
-
-            <!-- Кнопка удаления -->
             <Button
                 android:id="@+id/deleteButton"
                 android:layout_width="wrap_content"

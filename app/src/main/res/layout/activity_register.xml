@@ -17,7 +17,6 @@
         android:paddingEnd="20dp"
         android:gravity="center">
 
-        <!-- Кнопка назад -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -37,7 +36,6 @@
                 android:rotation="180" />
         </LinearLayout>
 
-        <!-- Логотип или иконка приложения -->
         <LinearLayout
             android:layout_width="70dp"
             android:layout_height="70dp"
@@ -52,7 +50,6 @@
                 android:tint="#818CF8" />
         </LinearLayout>
 
-        <!-- Заголовок -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -73,7 +70,6 @@
             android:fontFamily="sans-serif-black"
             android:layout_marginBottom="32dp"/>
 
-        <!-- Поле ввода логина -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -98,7 +94,6 @@
             android:background="@drawable/edittext_modern_bg"
             android:layout_marginBottom="20dp"/>
 
-        <!-- Поле ввода пароля -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -123,7 +118,6 @@
             android:background="@drawable/edittext_modern_bg"
             android:layout_marginBottom="20dp"/>
 
-        <!-- Подтверждение пароля -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -148,7 +142,6 @@
             android:background="@drawable/edittext_modern_bg"
             android:layout_marginBottom="32dp"/>
 
-        <!-- Индикатор сложности пароля (для красоты) -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -178,7 +171,6 @@
                 android:background="#334155"/>
         </LinearLayout>
 
-        <!-- Кнопка регистрации -->
         <Button
             android:id="@+id/registerButton"
             android:layout_width="match_parent"
@@ -192,7 +184,6 @@
             android:layout_marginBottom="24dp"
             android:stateListAnimator="@null"/>
 
-        <!-- Разделитель -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -221,7 +212,6 @@
                 android:background="#334155" />
         </LinearLayout>
 
-        <!-- Ссылка на вход -->
         <TextView
             android:id="@+id/loginLink"
             android:layout_width="wrap_content"
@@ -233,17 +223,6 @@
             android:padding="8dp"
             android:clickable="true"
             android:focusable="true"/>
-
-        <!-- Дополнительный текст с условиями -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="Продолжая, вы соглашаетесь с условиями использования"
-            android:textSize="11sp"
-            android:textColor="#64748B"
-            android:gravity="center"
-            android:lineSpacingExtra="2dp"/>
 
     </LinearLayout>
 </ScrollView>

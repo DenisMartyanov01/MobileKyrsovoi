@@ -17,12 +17,10 @@
         android:paddingStart="12dp"
         android:paddingEnd="12dp">
 
-        <!-- Хедер с градиентом -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="72dp"
             android:layout_marginBottom="20dp"
-            android:background="@drawable/round_header_bg"
             android:gravity="center_vertical"
             android:paddingHorizontal="16dp"
             android:orientation="horizontal">
@@ -49,18 +47,8 @@
                 android:gravity="center"
                 android:fontFamily="sans-serif-black" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="3-15"
-                android:textSize="14sp"
-                android:textColor="#FFFFFF"
-                android:background="@drawable/pill_bg"
-                android:paddingHorizontal="12dp"
-                android:paddingVertical="6dp" />
         </LinearLayout>
 
-        <!-- Инфо карточка -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -115,7 +103,6 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Блок 1: Открывание глаз -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -130,7 +117,6 @@
                 android:orientation="vertical"
                 android:padding="0dp">
 
-                <!-- Заголовок -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -155,15 +141,6 @@
                         android:textColor="#818CF8"
                         android:letterSpacing="0.05" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="1-4"
-                        android:textSize="12sp"
-                        android:textColor="#94A3B8"
-                        android:background="@drawable/pill_gray"
-                        android:paddingHorizontal="8dp"
-                        android:paddingVertical="3dp" />
                 </LinearLayout>
 
                 <RadioGroup
@@ -235,7 +212,6 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Блок 2: Речевая реакция -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -274,15 +250,6 @@
                         android:textColor="#F87171"
                         android:letterSpacing="0.05" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="1-5"
-                        android:textSize="12sp"
-                        android:textColor="#94A3B8"
-                        android:background="@drawable/pill_gray"
-                        android:paddingHorizontal="8dp"
-                        android:paddingVertical="3dp" />
                 </LinearLayout>
 
                 <RadioGroup
@@ -370,7 +337,6 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Блок 3: Двигательная реакция -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -409,15 +375,6 @@
                         android:textColor="#4ADE80"
                         android:letterSpacing="0.05" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="1-6"
-                        android:textSize="12sp"
-                        android:textColor="#94A3B8"
-                        android:background="@drawable/pill_gray"
-                        android:paddingHorizontal="8dp"
-                        android:paddingVertical="3dp" />
                 </LinearLayout>
 
                 <RadioGroup
@@ -521,7 +478,7 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Кнопка расчета -->
+
         <Button
             android:id="@+id/calculateButton"
             android:layout_width="match_parent"
@@ -534,7 +491,7 @@
             android:gravity="center"
             android:layout_marginBottom="16dp" />
 
-        <!-- Результат -->
+
         <androidx.cardview.widget.CardView
             android:id="@+id/resultContainer"
             android:layout_width="match_parent"
@@ -595,7 +552,6 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Легенда -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

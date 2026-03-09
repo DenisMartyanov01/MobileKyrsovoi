@@ -17,7 +17,6 @@
         android:paddingStart="12dp"
         android:paddingEnd="12dp">
 
-        <!-- Хедер с градиентом -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="72dp"
@@ -61,7 +60,6 @@
                 android:paddingVertical="6dp" />
         </LinearLayout>
 
-        <!-- Кнопка очистки в новом стиле -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -87,7 +85,6 @@
                 app:iconTint="#FFFFFF" />
         </LinearLayout>
 
-        <!-- RecyclerView с новым оформлением -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
@@ -98,50 +95,15 @@
             android:paddingBottom="8dp"
             android:paddingHorizontal="4dp" />
 
-        <!-- Пустое состояние с новым дизайном -->
-        <LinearLayout
+        <TextView
             android:id="@+id/emptyTextView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
             android:gravity="center"
-            android:padding="32dp"
-            android:visibility="gone">
-
-            <!-- Кружок с иконкой -->
-            <LinearLayout
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:background="@drawable/empty_circle_bg"
-                android:gravity="center"
-                android:layout_marginBottom="20dp">
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_history"
-                    android:tint="#94A3B8" />
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="История пуста"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="#FFFFFF"
-                android:fontFamily="sans-serif-medium"
-                android:layout_marginBottom="8dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Здесь будут появляться ваши расчеты по шкале Глазго"
-                android:textSize="14sp"
-                android:textColor="#94A3B8"
-                android:gravity="center"
-                android:lineSpacingExtra="4dp" />
-        </LinearLayout>
+            android:text="История расчетов пуста"
+            android:textColor="#94A3B8"
+            android:textSize="16sp"
+            android:visibility="gone" />
 
     </LinearLayout>
 
